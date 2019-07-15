@@ -1,6 +1,6 @@
-1.Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+# 1.Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
-//Code
+'''
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         
@@ -15,6 +15,7 @@ class Solution {
         throw new IllegalArgumentException("No two sum solution");
     }
 }
+'''
 //Summary
 (1)用哈希表来代替循环查找操作，即用n空间换n时间，这在之后的查找中都可以采用；
 (2)*1注意哈希表初始化时，Map<>中必须是Object，不能用简单数据类型；
@@ -22,8 +23,8 @@ class Solution {
 (4)因为数组一遍过，当前之前的元素已经试过和更前的元素相加，无须再试，因此这里只用了一层循环。
 
 
-2.某数组中仅包含一个出现次数为奇数的数，其他元素出现次数均为偶数，找出该数。
-//Code
+# 2.某数组中仅包含一个出现次数为奇数的数，其他元素出现次数均为偶数，找出该数。
+'''
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int rst=0;
@@ -31,6 +32,7 @@ class Solution {
         return rst;
     }
 }
+'''
 //Summary
 (1)位运算中的亦或运算^，两个一样的数亦或（a^a=0），如此对所有元素亦或运算，结果即为目标数；
 (2)a^b:二进制相同位取0，不同取1；
