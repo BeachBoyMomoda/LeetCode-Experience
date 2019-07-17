@@ -1,7 +1,8 @@
 # LeetCode-Experience
 Record of what I learn from leetcode
 
-## 1.Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+## 1.两数之和
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 '''
 class Solution {
@@ -45,7 +46,8 @@ class Solution {
    >>>:无符号右移n位，>>>与>>唯一的不同是它无论原来的最左边是什么数，统统都用0填充。
        比如，byte是8位的，-1表示为byte型是11111111(补码表示法），b>>>4就是无符号右移4位，即00001111，这样结果就是15。
        
-## 3.There are two sorted arrays nums1 and nums2 of size m and n respectively.
+## 3.两数组中位数
+There are two sorted arrays nums1 and nums2 of size m and n respectively.
 Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
 You may assume nums1 and nums2 cannot be both empty.
 '''
@@ -95,7 +97,8 @@ class Solution {
  1)边界条件：可能i==nums1.length()-1，或j==nums2.length()-1的情况，单独考虑；
  2)循环体：二分查找，时间复杂度降为log(nums1.length())。根据需要满足的两个条件来确定循环每次运算的空间。
  
-## 4.Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+## 4.最长回文
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 '''
  public String longestPalindrome(String s) {
     if (s == null || s.length() < 1) return "";
@@ -125,7 +128,8 @@ private int expandAroundCenter(String s, int left, int right) {
 对每一/二个字符进行中心扩展（回文中心可以是双字符）。
 
 
-## 5.The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: 
+## 5.Z型输出
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: 
 (you may want to display this pattern in a fixed font for better legibility)
 P   A   H   N
 A P L S I I G
