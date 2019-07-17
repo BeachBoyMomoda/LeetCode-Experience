@@ -18,8 +18,7 @@ class Solution {
         }
         throw new IllegalArgumentException("No two sum solution");
     }
-}
-'''
+
 ### Summary
 (1)用哈希表来代替循环查找操作，即用n空间换n时间，这在之后的查找中都可以采用；
 (2)*1注意哈希表初始化时，Map<>中必须是Object，不能用简单数据类型；
