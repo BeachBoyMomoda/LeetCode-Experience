@@ -34,17 +34,17 @@ You may assume that each input would have exactly one solution, and you may not 
     }
 
 ### Summary
-(1)位运算中的亦或运算^，两个一样的数亦或（a^a=0），如此对所有元素亦或运算，结果即为目标数；\n
-(2)a^b:二进制相同位取0，不同取1；
-   a&b:二进制有一个为0就为0；
-   a<<n:二进制左移n位，后面补0，相当于a*(2的n次方)；
-   a>>n:二进制右移n位，相当于a/(2的n次方)
-   '>>>':无符号右移n位，>>>与>>唯一的不同是它无论原来的最左边是什么数，统统都用0填充。
+(1)位运算中的亦或运算^，两个一样的数亦或（a^a=0），如此对所有元素亦或运算，结果即为目标数；  
+(2)a^b:二进制相同位取0，不同取1；  
+   a&b:二进制有一个为0就为0；  
+   a<<n:二进制左移n位，后面补0，相当于a*(2的n次方)；  
+   a>>n:二进制右移n位，相当于a/(2的n次方)  
+   '>>>':无符号右移n位，>>>与>>唯一的不同是它无论原来的最左边是什么数，统统都用0填充。  
        比如，byte是8位的，-1表示为byte型是11111111(补码表示法），b>>>4就是无符号右移4位，即00001111，这样结果就是15。
        
 ## 3.两数组中位数
-There are two sorted arrays nums1 and nums2 of size m and n respectively.
-Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+There are two sorted arrays nums1 and nums2 of size m and n respectively.  
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).  
 You may assume nums1 and nums2 cannot be both empty.
 ### Code
     
@@ -85,13 +85,13 @@ You may assume nums1 and nums2 cannot be both empty.
 
 
 ### Summary
-(1)整体构思，先确定两大条件：
- 1)要找的是一个划分，这个划分会将两数组左右两边划为等长的部分，由此nums1数组下标和nums2数组下标关系确立；
- 2)划分确定之后，因满足nums1[i]<nums1[i+1],nums1[i]<nums2[j+1],nums2[j]<nums[j+1],nums2[j]<nums1[i+1]。
-   由两数组有序，上述条件简化为nums1[i]<nums2[j+1],nums2[j]<nums1[i+1]；
-(2)边界条件和循环体：
- 1)边界条件：可能i==nums1.length()-1，或j==nums2.length()-1的情况，单独考虑；
- 2)循环体：二分查找，时间复杂度降为log(nums1.length())。根据需要满足的两个条件来确定循环每次运算的空间。
+(1)整体构思，先确定两大条件：  
+ 1)要找的是一个划分，这个划分会将两数组左右两边划为等长的部分，由此nums1数组下标和nums2数组下标关系确立；  
+ 2)划分确定之后，因满足nums1[i]<nums1[i+1],nums1[i]<nums2[j+1],nums2[j]<nums[j+1],nums2[j]<nums1[i+1]。  
+   由两数组有序，上述条件简化为nums1[i]<nums2[j+1],nums2[j]<nums1[i+1]；  
+(2)边界条件和循环体：  
+ 1)边界条件：可能i==nums1.length()-1，或j==nums2.length()-1的情况，单独考虑；  
+ 2)循环体：二分查找，时间复杂度降为log(nums1.length())。根据需要满足的两个条件来确定循环每次运算的空间。  
  
 ## 4.最长回文
 Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
@@ -126,11 +126,11 @@ Given a string s, find the longest palindromic substring in s. You may assume th
 
 
 ## 5.Z型输出
-The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: 
-(you may want to display this pattern in a fixed font for better legibility)
-P   A   H   N
-A P L S I I G
-Y   I   R
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:   
+(you may want to display this pattern in a fixed font for better legibility)  
+P   A   H   N  
+A P L S I I G  
+Y   I   R  
 And then read line by line: "PAHNAPLSIIGYIR"
 ### Code
     public String convert(String s, int numRows) {
@@ -151,7 +151,7 @@ And then read line by line: "PAHNAPLSIIGYIR"
     }
 
 ### Summary
-自己的解法是先按格式放在一个二维矩阵里，实则浪费了很多空间和赋值时间。
+自己的解法是先按格式放在一个二维矩阵里，实则浪费了很多空间和赋值时间。  
 事实上此题只是探求输出顺序和逻辑结构之间的对应关系。
 
 ## 6.电话数字字母组合
@@ -252,5 +252,5 @@ A mapping of digit to letters (just like on the telephone buttons) is given belo
     }
 
 ### Summary
-(1)递归的方式，最后一步有种DFS的感觉，但事实上只是在遍历指针start之后的所有元素；
+(1)递归的方式，最后一步有种DFS的感觉，但事实上只是在遍历指针start之后的所有元素；  
 (2)这里的4数可以换成n数。
