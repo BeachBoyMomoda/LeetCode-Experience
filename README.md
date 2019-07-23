@@ -7,22 +7,20 @@ You may assume that each input would have exactly one solution, and you may not 
 ### Code
     
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer,Integer> m=new HashMap();//*1
+        Map<Integer,Integer> m=new HashMap();//注意哈希表初始化时，Map<>中必须是Object，不能用简单数据类型；
         int tem;
         for(int i=0;i<nums.length;++i){
             tem=target-nums[i];
             if(m.containsKey(tem))
                 return new int[]{m.get(tem),i};
-            m.put(nums[i],i);//*2
+            m.put(nums[i],i);//注意该句不可在if之前，题目要求是非重复元；
         }
         throw new IllegalArgumentException("No two sum solution");
     }
 
 ### Summary
-(1)用哈希表来代替循环查找操作，即用n空间换n时间，这在之后的查找中都可以采用；
-(2)*1注意哈希表初始化时，Map<>中必须是Object，不能用简单数据类型；
-(3)*2注意该句不可在if之前，题目要求是非重复元；
-(4)因为数组一遍过，当前之前的元素已经试过和更前的元素相加，无须再试，因此这里只用了一层循环。
+(1)用哈希表来代替循环查找操作，即用n空间换n时间，这在之后的查找中都可以采用；\n
+(2)因为数组一遍过，当前之前的元素已经试过和更前的元素相加，无须再试，因此这里只用了一层循环。
 
 
 ## 2.找特别数
@@ -36,12 +34,12 @@ You may assume that each input would have exactly one solution, and you may not 
     }
 
 ### Summary
-(1)位运算中的亦或运算^，两个一样的数亦或（a^a=0），如此对所有元素亦或运算，结果即为目标数；
+(1)位运算中的亦或运算^，两个一样的数亦或（a^a=0），如此对所有元素亦或运算，结果即为目标数；\n
 (2)a^b:二进制相同位取0，不同取1；
    a&b:二进制有一个为0就为0；
    a<<n:二进制左移n位，后面补0，相当于a*(2的n次方)；
    a>>n:二进制右移n位，相当于a/(2的n次方)
-   >>>:无符号右移n位，>>>与>>唯一的不同是它无论原来的最左边是什么数，统统都用0填充。
+   '>>>':无符号右移n位，>>>与>>唯一的不同是它无论原来的最左边是什么数，统统都用0填充。
        比如，byte是8位的，-1表示为byte型是11111111(补码表示法），b>>>4就是无符号右移4位，即00001111，这样结果就是15。
        
 ## 3.两数组中位数
