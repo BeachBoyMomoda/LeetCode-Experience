@@ -19,7 +19,7 @@ You may assume that each input would have exactly one solution, and you may not 
     }
 
 ### Summary
-(1)用哈希表来代替循环查找操作，即用n空间换n时间，这在之后的查找中都可以采用；\n
+(1)用哈希表来代替循环查找操作，即用n空间换n时间，这在之后的查找中都可以采用；  
 (2)因为数组一遍过，当前之前的元素已经试过和更前的元素相加，无须再试，因此这里只用了一层循环。
 
 
